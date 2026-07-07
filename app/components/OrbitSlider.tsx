@@ -1,5 +1,5 @@
 import { Event } from "../types/event";
-import EventCard from "./EventCard";
+import GlassyEventCard from "./common/GlassyEventCard";
 
 type OrbitSliderProps = {
   cards: Event[];
@@ -26,7 +26,7 @@ export default function OrbitSlider({ cards, side }: OrbitSliderProps) {
               animationDelay: `${-index * 5}s`,
             }}
           >
-            <EventCard {...card} />
+            <GlassyEventCard {...card} />
           </div>
         ))}
       </div>

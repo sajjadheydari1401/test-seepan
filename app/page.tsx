@@ -1,5 +1,6 @@
-import Featured from "./components/Featured";
 import Hero from "./components/Hero";
+import Featured from "./components/Featured";
+import DiscountedCategories from "./components/DiscountedCategories";
 
 export default function Home() {
   return (
@@ -7,6 +8,8 @@ export default function Home() {
       <Hero />
 
       <Featured />
+
+      <DiscountedCategories />
     </main>
   );
 }

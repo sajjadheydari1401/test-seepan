@@ -25,4 +25,12 @@ export const eventCards: Event[] = [
     oldPrice: "۲,۵۰۰,۰۰۰",
     discount: "۴۲٪",
   },
+  {
+    image: "/images/slide-pic-2.png",
+    title: "تست",
+    price: "۱,۹۵۰,۰۰۰",
+    currency: "تومان",
+    oldPrice: "۲,۵۰۰,۰۰۰",
+    discount: "۴۲٪",
+  },
 ];

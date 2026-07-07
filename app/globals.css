@@ -83,7 +83,7 @@ body {
 
   /* Mobile Screen */
 
-  --animate-mobile-orbit: mobileOrbit 20s infinite;
+  /* --animate-mobile-orbit: mobileOrbit 20s infinite;
   --animate-mobile-active: mobileActive 20s infinite;
 
   @keyframes mobileOrbit {
@@ -122,5 +122,5 @@ body {
     100% {
       transform: translateY(0) scale(1);
     }
-  }
+  } */
 }

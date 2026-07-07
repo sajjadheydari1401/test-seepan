@@ -11,7 +11,7 @@ type Props = {
   imageClassName?: string;
 };
 
-const FeaturedEventCard = ({
+const EventCard = ({
   image,
   title,
   price,
@@ -67,4 +67,4 @@ const FeaturedEventCard = ({
   );
 };
 
-export default FeaturedEventCard;
+export default EventCard;

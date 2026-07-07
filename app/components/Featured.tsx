@@ -1,5 +1,5 @@
 import Image from "next/image";
-import FeaturedEventCard from "./common/FeaturedEventCard";
+import EventCard from "./common/EventCard";
 import FeaturedBg from "../../public/images/featured-section-bg.svg";
 import FeaturedBgMobile from "../../public/images/featured-section-mobile-bg.svg";
 import { eventCards } from "../data/events";
@@ -16,7 +16,7 @@ const Featured = () => {
 
       {/* Desktop */}
       <div className="relative max-w-360 max-h-218.25 mx-auto mt-8 hidden md:block">
-        <FeaturedEventCard
+        <EventCard
           image="/images/slide-pic-1.png"
           title="رستوران سدروس"
           price="۲,۸۰۰,۰۰۰"
@@ -36,7 +36,7 @@ const Featured = () => {
 
         <div className="absolute bottom-0 left-0 gap-8 w-full max-w-234.25 h-89.5 flex">
           {eventCards.map((i, index) => (
-            <FeaturedEventCard
+            <EventCard
               key={index}
               image={i.image}
               title={i.title}
@@ -61,7 +61,7 @@ const Featured = () => {
         </div>
         <div className="flex flex-wrap gap-4 w-full mt-4">
           {eventCards.map((i, index) => (
-            <FeaturedEventCard
+            <EventCard
               key={index}
               image={i.image}
               title={i.title}

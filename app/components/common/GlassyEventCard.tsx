@@ -9,7 +9,7 @@ interface Props {
   currency: string;
 }
 
-export default function EventCard({
+export default function GlassyEventCard({
   image,
   title,
   price,
