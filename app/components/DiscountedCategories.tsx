@@ -42,12 +42,12 @@ const DiscountedCategories = () => {
 
 
     [&.swiper-slide-next]:rotate-12
-    [&.swiper-slide-next]:-translate-x-50
+    [&.swiper-slide-next]:-translate-x-53
 
     [&.swiper-slide-active]:scale-100
     [&.swiper-slide-active]:rotate-0
     [&.swiper-slide-active]:-translate-x-70
-    [&.swiper-slide-active]:-translate-y-0
+    [&.swiper-slide-active]:translate-y-0
 
 
   "
