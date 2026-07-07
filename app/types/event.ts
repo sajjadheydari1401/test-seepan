@@ -6,3 +6,9 @@ export interface Event {
   oldPrice: string;
   discount: string;
 }
+
+export interface Category {
+  image: string;
+  title: string;
+  discount: string;
+}

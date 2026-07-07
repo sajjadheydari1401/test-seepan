@@ -20,12 +20,12 @@ export default function GlassyEventCard({
   className = "",
 }: Props) {
   return (
-    <div className={`w-65 h-65 relative rounded-2x1! ${className}`}>
+    <div className={`w-65 h-65 relative rounded-2xl! ${className}`}>
       <Image
         src={image}
         alt={title}
         fill
-        className="w-full h-full object-cover rounded-2x1!"
+        className="w-full h-full object-cover rounded-2xl!"
       />
 
       <div

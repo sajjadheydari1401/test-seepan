@@ -22,7 +22,7 @@ const CategoryCard = ({ className = "", discount, image, title }: Props) => {
     <div
       className={`w-242 h-142.75 overflow-hidden rounded-4xl bg-white pt-7.5 pr-12 pb-13.25 pl-8 ${className}`}
     >
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-6">
         <div className="relative">
           <Image
             src={discountStarIcon}
@@ -49,6 +49,7 @@ const CategoryCard = ({ className = "", discount, image, title }: Props) => {
         spaceBetween={16}
         centeredSlides
         // autoplay
+        loop
       >
         {eventCards.map((card, index) => (
           <SwiperSlide key={index}>
