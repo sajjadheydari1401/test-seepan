@@ -1,7 +1,7 @@
 import OrbitSlider from "./OrbitSlider";
 import MobileOrbitSlider from "./MobileOrbitSlider";
-import HeroContent from "./HeroContent";
 import { eventCards } from "../data/events";
+import HeroContent from "./HeroContent";
 
 export default function Hero() {
   return (
