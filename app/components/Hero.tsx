@@ -1,4 +1,5 @@
 import OrbitSlider from "./OrbitSlider";
+import MobileOrbitSlider from "./MobileOrbitSlider";
 import HeroContent from "./HeroContent";
 import { eventCards } from "../data/events";
 
@@ -10,9 +11,16 @@ export default function Hero() {
         backgroundImage: "url('/images/hero-bg.png')",
       }}
     >
-      <OrbitSlider side="left" cards={eventCards} />
+      {/* Desktop */}
+      <div className="hidden lg:block">
+        <OrbitSlider side="left" cards={eventCards} />
+        <OrbitSlider side="right" cards={eventCards} />
+      </div>
 
-      <OrbitSlider side="right" cards={eventCards} />
+      {/* Mobile & Tablet */}
+      <div className="lg:hidden absolute bottom-57.5 w-full left-0">
+        <MobileOrbitSlider cards={eventCards} />
+      </div>
 
       <HeroContent />
     </section>
