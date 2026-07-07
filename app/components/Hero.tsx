@@ -6,7 +6,7 @@ import HeroContent from "./HeroContent";
 export default function Hero() {
   return (
     <section
-      className="relative h-screen overflow-hidden bg-cover bg-center"
+      className="relative h-232 overflow-hidden bg-cover bg-center"
       style={{
         backgroundImage: "url('/images/hero-bg.png')",
       }}
