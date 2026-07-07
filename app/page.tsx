@@ -4,7 +4,7 @@ import DiscountedCategories from "./components/DiscountedCategories";
 
 export default function Home() {
   return (
-    <main className="px-5 md:px-0">
+    <main>
       <Hero />
 
       <Featured />

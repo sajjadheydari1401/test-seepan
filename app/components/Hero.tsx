@@ -19,7 +19,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile & Tablet */}
-      <div className="lg:hidden absolute bottom-57.5 w-full left-0">
+      <div className="md:hidden absolute bottom-45 w-full left-0">
         <MobileOrbitSlider cards={eventCards} />
       </div>
 

@@ -6,7 +6,7 @@ import { eventCards } from "../data/events";
 
 const Featured = () => {
   return (
-    <div className="relative max-md:bottom-40">
+    <div className="relative max-md:bottom-40 px-5 md:px-0">
       <p className="md:text-[32px] text-[#1E1E1E] text-center font-semibold md:font-bold">
         انتخاب کاربران
       </p>

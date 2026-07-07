@@ -80,47 +80,4 @@ body {
       transform: rotate(-360deg) translateX(-260px) rotate(360deg) scale(1.3);
     }
   }
-
-  /* Mobile Screen */
-
-  /* --animate-mobile-orbit: mobileOrbit 20s infinite;
-  --animate-mobile-active: mobileActive 20s infinite;
-
-  @keyframes mobileOrbit {
-    0%,
-    20% {
-      transform: translateX(0%);
-    }
-
-    25%,
-    45% {
-      transform: translateX(-100%);
-    }
-
-    50%,
-    70% {
-      transform: translateX(-200%);
-    }
-
-    75%,
-    95% {
-      transform: translateX(-300%);
-    }
-
-    100% {
-      transform: translateX(-400%);
-    }
-  }
-
-  @keyframes mobileActive {
-    0%,
-    20% {
-      transform: translateY(-16px) scale(1.12);
-    }
-
-    25%,
-    100% {
-      transform: translateY(0) scale(1);
-    }
-  } */
 }

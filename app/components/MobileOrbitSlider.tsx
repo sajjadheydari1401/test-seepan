@@ -16,9 +16,10 @@ export default function MobileOrbitSlider({ cards }: Props) {
   return (
     <div className="w-full py-8">
       <Swiper
-        modules={[Navigation]}
-        slidesPerView={3}
-        centeredSlides={true}
+        modules={[Navigation, Autoplay]}
+        slidesPerView={1.7}
+        centeredSlides
+        autoplay
         className="!overflow-visible"
       >
         {cards.map((card, index) => (
@@ -26,9 +27,10 @@ export default function MobileOrbitSlider({ cards }: Props) {
             key={index}
             className="transition-all duration-300 scale-90
                  [&.swiper-slide-active]:scale-125
+                 [&.swiper-slide-active]:-translate-y-30
                  [&.swiper-slide-active]:z-150!"
           >
-            <GlassyEventCard {...card} />
+            <GlassyEventCard {...card} className="" />
           </SwiperSlide>
         ))}
       </Swiper>
