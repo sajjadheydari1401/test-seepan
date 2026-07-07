@@ -1,5 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import discountStarIcon from "../../../public/icons/discount-star-icon.svg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import EventCard from "./EventCard";
+import { eventCards } from "@/app/data/events";
+import { Autoplay, Navigation } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
 
 type Props = {
   image: string;
@@ -33,6 +42,25 @@ const CategoryCard = ({ className = "", discount, image, title }: Props) => {
           <Image src={image} alt="logo" width={64} height={64} className="" />
         </div>
       </div>
+
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        slidesPerView={2.7}
+        spaceBetween={16}
+        centeredSlides
+        // autoplay
+      >
+        {eventCards.map((card, index) => (
+          <SwiperSlide key={index}>
+            <EventCard
+              {...card}
+              imageClassName="h-[259px]! mb-1!"
+              className="border border-[#CBCBCB] "
+              priceClassName="text-[14px]!"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
