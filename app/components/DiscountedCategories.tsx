@@ -33,24 +33,22 @@ const DiscountedCategories = () => {
           <SwiperSlide
             key={index}
             className="
-    transition-all duration-300
-    scale-60 
+              transition-all duration-300
+              scale-60 
 
-    [&.swiper-slide-prev]:-rotate-10
-    [&.swiper-slide-prev]:translate-y-20
-    [&.swiper-slide-prev]:-translate-x-30
-
-
-    [&.swiper-slide-next]:rotate-12
-    [&.swiper-slide-next]:-translate-x-53
-
-    [&.swiper-slide-active]:scale-100
-    [&.swiper-slide-active]:rotate-0
-    [&.swiper-slide-active]:-translate-x-70
-    [&.swiper-slide-active]:translate-y-0
+              [&.swiper-slide-prev]:-rotate-10
+              [&.swiper-slide-prev]:translate-y-20
+              [&.swiper-slide-prev]:-translate-x-30
 
 
-  "
+              [&.swiper-slide-next]:rotate-12
+              [&.swiper-slide-next]:-translate-x-53
+
+              [&.swiper-slide-active]:scale-100
+              [&.swiper-slide-active]:rotate-0
+              [&.swiper-slide-active]:-translate-x-70
+              [&.swiper-slide-active]:translate-y-0
+           "
           >
             <CategoryCard {...card} />
           </SwiperSlide>
