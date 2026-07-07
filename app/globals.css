@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Rokh";
+  src: url("/fonts/Rokh-Black.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Peyda";
+  src: url("/fonts/Peyda-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-rokh: "Rokh", sans-serif;
+  --font-peyda: "Peyda", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-rokh {
+  font-family: var(--font-rokh);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.font-peyda {
+  font-family: var(--font-peyda);
+}
+
+@theme {
+  --animate-orbit-left: orbitLeft 20s infinite;
+  --animate-orbit-right: orbitRight 20s infinite;
+
+  @keyframes orbitLeft {
+    0% {
+      transform: rotate(0deg) translateX(260px) rotate(0deg);
+    }
+
+    24.99% {
+    }
+
+    25% {
+      transform: rotate(90deg) translateX(260px) rotate(-90deg);
+    }
+
+    50% {
+      transform: rotate(180deg) translateX(260px) rotate(-180deg);
+    }
+
+    75% {
+      transform: rotate(270deg) translateX(260px) rotate(-270deg);
+    }
+
+    100% {
+      transform: rotate(360deg) translateX(260px) rotate(-360deg) scale(1.3);
+    }
+  }
+
+  @keyframes orbitRight {
+    0% {
+      transform: rotate(0deg) translateX(-260px) rotate(0deg);
+    }
+
+    25% {
+      transform: rotate(-90deg) translateX(-260px) rotate(90deg);
+    }
+
+    50% {
+      transform: rotate(-180deg) translateX(-260px) rotate(180deg);
+    }
+
+    75% {
+      transform: rotate(-270deg) translateX(-260px) rotate(270deg);
+    }
+
+    100% {
+      transform: rotate(-360deg) translateX(-260px) rotate(360deg) scale(1.3);
+      z-index: 1000 !important;
+    }
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-peyda);
 }
