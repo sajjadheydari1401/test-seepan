@@ -46,7 +46,7 @@ const EventCard = ({
           alt="Save"
           width={32}
           height={32}
-          className="absolute top-1.5 right-1.5 md:top-4 md:right-4 h-6 w-6 cursor-pointer"
+          className="absolute top-1.5 right-1.5 md:top-4 md:right-4 h-6 w-6 md:h-8 md:w-8 cursor-pointer"
         />
 
         {/* User Photo */}

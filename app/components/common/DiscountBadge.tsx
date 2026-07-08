@@ -15,7 +15,7 @@ export const DiscountBadge = ({ discount }: DiscountBadgeProps) => {
         height={81.24}
         className="max-md:w-13 max-md:h-13"
       />
-      <div className="text-white flex flex-col absolute md:left-[22%] top-1 left-[18%] text-center -rotate-10">
+      <div className="text-white flex flex-col absolute md:left-[30%] md:top-3 top-1 left-[30%] text-center -rotate-10">
         <span className="text-[10px] md:text-base">تا</span>
         <span className="text-[16px] md:text-2xl">{discount}%</span>
       </div>

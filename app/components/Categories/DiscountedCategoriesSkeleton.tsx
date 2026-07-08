@@ -1,3 +1,5 @@
+import { SectionHeader } from "../common/SectionHeader";
+
 export const DiscountedCategoriesSkeleton = () => {
   return (
     <section
@@ -6,12 +8,10 @@ export const DiscountedCategoriesSkeleton = () => {
         backgroundImage: "url('/images/categories-bg.svg')",
       }}
     >
-      <p className="md:text-[32px] text-[24px] text-[#1E1E1E] text-center font-semibold md:font-bold">
-        دسته بندی های پر تخفیف
-      </p>
-      <p className="mt-2 text-[14px] md:text-[16px] text-[#1E1E1E] text-center mb-4 md:mb-8">
-        تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن
-      </p>
+      <SectionHeader
+        title="دسته بندی های پر تخفیف"
+        subtitle="تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن"
+      />
       <div className="flex justify-center gap-8">
         {[1, 2, 3].map((i) => (
           <div
