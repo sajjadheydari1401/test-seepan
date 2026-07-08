@@ -62,7 +62,7 @@ const DiscountedCategories = () => {
       <SectionHeader
         title="دسته بندی های پر تخفیف"
         subtitle="تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن"
-        className="md:mb-8"
+        className="mb-4 md:mb-8"
       />
 
       <CategorySwiper

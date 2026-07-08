@@ -65,6 +65,7 @@ export default function GlassyEventCard({
           bg-white/15
           md:p-2.5
           px-5
+          max-md:py-2.5
           backdrop-blur-md"
       >
         <h3 className="font-bold text-center text-sm md:text-base">
@@ -82,15 +83,15 @@ export default function GlassyEventCard({
           </div>
         )}
 
-        <div className="flex items-center justify-center gap-2.5 mt-2">
+        <div className="flex items-center justify-center gap-2">
           {/* Discount badge */}
           {discount && (
-            <div className="bg-red-500 text-white pl-1 pr-3 pb-1 pt-0.5 max-h-max text-center text-[12px] [clip-path:polygon(0_23%,0_80%,59%_81%,88%_54%,60%_24%)]">
+            <div className="bg-red-500 text-white pl-1 pr-3 pb-1 md:pt-2 pt-1.5 max-h-max text-center text-[12px] [clip-path:polygon(0_23%,0_80%,59%_81%,88%_54%,60%_24%)]">
               {discount}
             </div>
           )}
 
-          <div className="flex items-center md:gap-2 md:mt-3 flex-col">
+          <div className="flex items-center md:gap-1 md:mt-1 flex-col">
             {/* Current price */}
             <div dir="ltr" className="flex items-center gap-1 text-[#1D60A4]">
               <span>{displayCurrency}</span>

@@ -40,10 +40,7 @@ export default function MobileHeroSlider({ cards }: Props) {
                  [&.swiper-slide-active]:-translate-y-30
                  [&.swiper-slide-active]:z-150!"
           >
-            <GlassyEventCard
-              {...transformEventToCardProps(card)}
-              className=""
-            />
+            <GlassyEventCard {...transformEventToCardProps(card)} />
           </SwiperSlide>
         ))}
       </Swiper>
