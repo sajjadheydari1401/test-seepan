@@ -1,6 +1,6 @@
-import Hero from "./components/Hero";
-import Featured from "./components/Featured";
-import DiscountedCategories from "./components/DiscountedCategories";
+import Hero from "./components/Hero/Hero";
+import Featured from "./components/Featured/Featured";
+import DiscountedCategories from "./components/Categories/DiscountedCategories";
 
 export default function Home() {
   return (

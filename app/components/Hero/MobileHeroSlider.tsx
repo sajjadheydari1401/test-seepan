@@ -1,19 +1,19 @@
 "use client";
 
-import { Event } from "../types/event";
-import GlassyEventCard from "./common/GlassyEventCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import { transformEventToCardProps } from "../helper/event";
+import { transformEventToCardProps } from "@/app/helper/event";
+import GlassyEventCard from "../common/GlassyEventCard";
+import { Event } from "@/app/types/event";
 
 type Props = {
   cards: Event[];
 };
 
-export default function MobileOrbitSlider({ cards }: Props) {
+export default function MobileHeroSlider({ cards }: Props) {
   if (!cards || cards.length === 0) {
     return null;
   }

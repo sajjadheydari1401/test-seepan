@@ -1,13 +1,13 @@
-import { transformEventToCardProps } from "../helper/event";
-import { Event } from "../types/event";
-import GlassyEventCard from "./common/GlassyEventCard";
+import { transformEventToCardProps } from "../../helper/event";
+import { Event } from "../../types/event";
+import GlassyEventCard from "../common/GlassyEventCard";
 
-type OrbitSliderProps = {
+type Props = {
   cards: Event[];
   side: "left" | "right";
 };
 
-export default function OrbitSlider({ cards, side }: OrbitSliderProps) {
+export default function DesktopHeroSlider({ cards, side }: Props) {
   const duplicatedCards = [...cards, ...cards, ...cards];
 
   const getAnimationDuration = (count: number) => {

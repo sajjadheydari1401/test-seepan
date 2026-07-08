@@ -1,9 +1,9 @@
-import OrbitSlider from "./OrbitSlider";
-import MobileOrbitSlider from "./MobileOrbitSlider";
+import OrbitSlider from "./DesktopHeroSlider";
+import MobileHeroSlider from "../Hero/MobileHeroSlider";
 import HeroContent from "./HeroContent";
 import { notFound } from "next/navigation";
-import { fetchHeroCarousel } from "../services/events";
-import { Event } from "../types/event";
+import { fetchHeroCarousel } from "../../services/events";
+import { Event } from "../../types/event";
 
 export const dynamic = "force-dynamic";
 
@@ -40,7 +40,7 @@ export default async function Hero() {
 
       {/* Mobile & Tablet */}
       <div className="lg:hidden absolute bottom-45 w-full left-0">
-        <MobileOrbitSlider cards={eventCards} />
+        <MobileHeroSlider cards={eventCards} />
       </div>
 
       <HeroContent />
