@@ -67,7 +67,7 @@ export default async function Featured() {
               key={card.id}
               {...card}
               className="max-h-89.5 max-w-360"
-              imageClassName="max-h-64.75"
+              imageClassName="max-h-[240px]"
             />
           ))}
         </div>
@@ -88,8 +88,8 @@ export default async function Featured() {
             <EventCard
               key={card.id}
               {...card}
-              className="xs:max-w-2/4 max-xs:w-full rounded-lg! px-2! pt-2! pb-0! h-54!"
-              imageClassName="max-h-41.25 rounded-lg! mb-1!"
+              className="xs:max-w-2/4 max-xs:w-full rounded-lg! px-2! pt-2! pb-0! h-65!"
+              imageClassName="max-h-41.25 rounded-lg! mb-5!"
             />
           ))}
         </div>

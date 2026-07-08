@@ -1,5 +1,6 @@
 import Image from "next/image";
 import bookmarkIcon from "../../../public/icons/bookmark-icon.svg";
+import providerPhoto from "../../../public/images/user-photo.png";
 
 type Props = {
   image: string;
@@ -11,7 +12,6 @@ type Props = {
   className?: string;
   priceClassName?: string;
   imageClassName?: string;
-  providerPhoto?: string;
 };
 
 const EventCard = ({
@@ -24,7 +24,6 @@ const EventCard = ({
   className = "",
   priceClassName = "",
   imageClassName = "",
-  providerPhoto = "",
 }: Props) => {
   return (
     <div

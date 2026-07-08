@@ -46,9 +46,3 @@ export interface HeroCarouselResponse {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   meta: any | null;
 }
-
-export interface Category {
-  image: string;
-  title: string;
-  discount: string;
-}

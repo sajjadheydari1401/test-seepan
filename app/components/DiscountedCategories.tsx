@@ -4,19 +4,129 @@
 
 import CategoryCard from "./common/CategoryCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { categoryCards } from "@/app/data/events";
 import { Navigation } from "swiper/modules";
 import { useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import leftArrow from "../../public/icons/left-icon.svg";
 import rightArrow from "../../public/icons/right-icon.svg";
 import Image from "next/image";
+import { useCategoryExperiences } from "@/app/hooks/useCategoryExperiences";
+
+// Loading skeleton component
+const CategorySkeleton = () => (
+  <div className="md:w-242 h-auto md:h-142.75 overflow-hidden rounded-4xl bg-white p-3 md:pt-7.5 md:pr-12 md:pb-13.25 md:pl-8 max-md:h-86.25 max-md:rounded-l-none! max-md:rounded-r-2xl! max-md:w-full">
+    <div className="flex justify-between items-center mb-6">
+      <div className="relative shrink-0">
+        <div className="w-13 h-13 md:w-20 md:h-20 bg-gray-200 rounded-full animate-pulse" />
+      </div>
+      <div className="flex gap-2 items-center">
+        <div className="w-20 h-6 bg-gray-200 rounded animate-pulse" />
+        <div className="w-12 h-12 md:w-16 md:h-16 bg-gray-200 rounded-full animate-pulse" />
+      </div>
+    </div>
+    <div className="flex gap-4">
+      {[1, 2, 3].map((i) => (
+        <div
+          key={i}
+          className="w-40 h-56 bg-gray-200 rounded-xl animate-pulse"
+        />
+      ))}
+    </div>
+  </div>
+);
 
 const DiscountedCategories = () => {
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_, setSwiperInstance] = useState<SwiperType | null>(null);
+
+  const {
+    data: categories,
+    isLoading,
+    isError,
+    error,
+  } = useCategoryExperiences();
+
+  const categoryCards =
+    categories?.map((category) => ({
+      id: category.publicId,
+      key: category.key,
+      title: category.nameFa,
+      discount: category.offer?.[0]?.value?.toString() || "0",
+      image: category.iconMediaUrl || "",
+    })) || [];
+
+  // Show loading state
+  if (isLoading) {
+    return (
+      <section
+        className="relative md:h-216 overflow-hidden bg-cover bg-center md:mt-30 md:py-9 pt-5 pb-8 max-md:bottom-25 max-md:pr-4"
+        style={{
+          backgroundImage: "url('/images/categories-bg.svg')",
+        }}
+      >
+        <p className="md:text-[32px] text-[24px] text-[#1E1E1E] text-center font-semibold md:font-bold">
+          دسته بندی های پر تخفیف
+        </p>
+        <p className="mt-2 text-[14px] md:text-[16px] text-[#1E1E1E] text-center mb-4 md:mb-8">
+          تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن
+        </p>
+        <div className="flex justify-center gap-8">
+          {[1, 2, 3].map((i) => (
+            <CategorySkeleton key={i} />
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  // Show error state
+  if (isError) {
+    return (
+      <section
+        className="relative md:h-216 overflow-hidden bg-cover bg-center md:mt-30 md:py-9 pt-5 pb-8 max-md:bottom-25 max-md:pr-4"
+        style={{
+          backgroundImage: "url('/images/categories-bg.svg')",
+        }}
+      >
+        <p className="md:text-[32px] text-[24px] text-[#1E1E1E] text-center font-semibold md:font-bold">
+          دسته بندی های پر تخفیف
+        </p>
+        <p className="mt-2 text-[14px] md:text-[16px] text-[#1E1E1E] text-center mb-4 md:mb-8">
+          تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن
+        </p>
+        <div className="text-center text-red-500 py-8">
+          <p>خطا در بارگذاری دسته‌بندی‌ها</p>
+          <p className="text-sm text-gray-500">
+            {error?.message || "لطفاً دوباره تلاش کنید"}
+          </p>
+        </div>
+      </section>
+    );
+  }
+
+  // If no categories, show empty state
+  if (categoryCards.length === 0) {
+    return (
+      <section
+        className="relative md:h-216 overflow-hidden bg-cover bg-center md:mt-30 md:py-9 pt-5 pb-8 max-md:bottom-25 max-md:pr-4"
+        style={{
+          backgroundImage: "url('/images/categories-bg.svg')",
+        }}
+      >
+        <p className="md:text-[32px] text-[24px] text-[#1E1E1E] text-center font-semibold md:font-bold">
+          دسته بندی های پر تخفیف
+        </p>
+        <p className="mt-2 text-[14px] md:text-[16px] text-[#1E1E1E] text-center mb-4 md:mb-8">
+          تخفیف‌های ویژه رو بر اساس علاقه‌ات پیدا کن
+        </p>
+        <div className="text-center py-8">
+          <p>هیچ دسته‌بندی‌ای یافت نشد</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
@@ -54,9 +164,9 @@ const DiscountedCategories = () => {
           swiper.params.navigation.nextEl = nextRef.current;
         }}
       >
-        {categoryCards.map((card, index) => (
+        {categoryCards?.map((card) => (
           <SwiperSlide
-            key={index}
+            key={card.id}
             className="
               transition-all duration-300
               md:scale-60 
@@ -64,7 +174,6 @@ const DiscountedCategories = () => {
               md:[&.swiper-slide-prev]:-rotate-10
               md:[&.swiper-slide-prev]:translate-y-20
               md:[&.swiper-slide-prev]:-translate-x-30
-
 
               md:[&.swiper-slide-next]:rotate-12
               md:[&.swiper-slide-next]:-translate-x-53
@@ -76,7 +185,11 @@ const DiscountedCategories = () => {
            "
           >
             <CategoryCard
-              {...card}
+              key={card.key}
+              categoryKey={card.key}
+              image={card.image}
+              title={card.title}
+              discount={card.discount}
               className="max-md:h-86.25 max-md:rounded-l-none! max-md:rounded-r-2xl! max-md:w-full"
             />
           </SwiperSlide>
