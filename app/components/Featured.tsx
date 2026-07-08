@@ -34,7 +34,7 @@ const Featured = () => {
           />
         </div>
 
-        <div className="absolute bottom-0 left-0 gap-8 w-full max-w-234.25 h-89.5 flex">
+        <div className="absolute bottom-0 md:-bottom-40 left-0 gap-8 w-full max-w-234.25 md:h-89.5 flex">
           {eventCards.map((i, index) => (
             <EventCard
               key={index}
@@ -67,7 +67,7 @@ const Featured = () => {
               title={i.title}
               price={i.price}
               currency={i.currency}
-              className="xs:max-w-2/4 max-xs:w-full rounded-lg! px-2! pt-2! pb-0! h-54! grow"
+              className="xs:max-w-2/4 max-xs:w-full rounded-lg! px-2! pt-2! pb-0! h-54!"
               imageClassName="max-h-41.25 rounded-lg! mb-1!"
             />
           ))}

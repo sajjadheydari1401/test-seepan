@@ -27,7 +27,7 @@ const EventCard = ({
 }: Props) => {
   return (
     <div
-      className={`w-50 h-57.5 lg:w-full lg:h-full overflow-hidden rounded-2xl bg-white p-4 ${className}`}
+      className={`w-50 h-57.5 lg:w-full lg:h-full overflow-hidden rounded-2xl bg-white p-4 max-md:aspect-square ${className}`}
     >
       <div
         className={`relative h-full w-full rounded-2xl mb-5.75 ${imageClassName}`}
@@ -46,7 +46,7 @@ const EventCard = ({
           alt="Save"
           width={32}
           height={32}
-          className="absolute top-1.5 right-1.5 md:top-4 md:right-4 h-6 w-6 max-md:h-4.5 max-md:w-4.5 cursor-pointer"
+          className="absolute top-1.5 right-1.5 md:top-4 md:right-4 h-6 w-6 cursor-pointer"
         />
 
         {/* User Photo */}
@@ -55,7 +55,7 @@ const EventCard = ({
           alt="User"
           width={48}
           height={48}
-          className="absolute bottom-2 right-2 md:bottom-4 md:right-4 max-md:h-6 max-md:w-6 rounded-sm md:rounded cursor-pointer"
+          className="absolute bottom-2 right-2 md:bottom-4 md:right-4 max-md:h-9 max-md:w-9 rounded-sm md:rounded cursor-pointer"
         />
       </div>
 

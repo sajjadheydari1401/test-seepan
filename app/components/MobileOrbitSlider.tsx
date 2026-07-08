@@ -19,6 +19,7 @@ export default function MobileOrbitSlider({ cards }: Props) {
         modules={[Navigation, Autoplay]}
         slidesPerView={1.7}
         centeredSlides
+        initialSlide={Math.floor(cards.length / 2)}
         autoplay
         className="!overflow-visible"
       >
