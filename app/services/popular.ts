@@ -1,11 +1,11 @@
-import { HeroCarouselResponse } from "../types/event";
+import { PopularEventsResponse } from "../types/popular";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
 
-export async function fetchHeroCarousel(): Promise<HeroCarouselResponse> {
+export async function fetchPopularEvents(): Promise<PopularEventsResponse> {
   try {
     const response = await fetch(
-      `${API_BASE_URL}/landing/experiences/hero-carousel/?take=3`,
+      `${API_BASE_URL}/landing/experiences/popular`,
       {
         method: "GET",
         headers: {
@@ -18,7 +18,7 @@ export async function fetchHeroCarousel(): Promise<HeroCarouselResponse> {
       throw new Error(`API error: ${response.status} ${response.statusText}`);
     }
 
-    const result: HeroCarouselResponse = await response.json();
+    const result: PopularEventsResponse = await response.json();
 
     if (!result.succeeded) {
       throw new Error(
@@ -28,7 +28,7 @@ export async function fetchHeroCarousel(): Promise<HeroCarouselResponse> {
 
     return result;
   } catch (error) {
-    console.error("Error fetching hero carousel:", error);
+    console.error("Error fetching popular events:", error);
     throw error;
   }
 }

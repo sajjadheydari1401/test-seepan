@@ -59,7 +59,7 @@ const CategoryCard = ({ className = "", discount, image, title }: Props) => {
           765: { slidesPerView: 3, spaceBetween: 20 },
         }}
       >
-        {eventCards.map((card, index) => (
+        {/* {eventCards.map((card, index) => (
           <SwiperSlide key={index} className="max-md:w-auto!">
             <EventCard
               {...card}
@@ -68,7 +68,7 @@ const CategoryCard = ({ className = "", discount, image, title }: Props) => {
               priceClassName="text-[12px] md:text-[14px]!"
             />
           </SwiperSlide>
-        ))}
+        ))} */}
       </Swiper>
     </div>
   );
