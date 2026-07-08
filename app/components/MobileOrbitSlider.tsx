@@ -7,12 +7,17 @@ import { Autoplay, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
+import { transformEventToCardProps } from "../helper/event";
 
 type Props = {
   cards: Event[];
 };
 
 export default function MobileOrbitSlider({ cards }: Props) {
+  if (!cards || cards.length === 0) {
+    return null;
+  }
+
   return (
     <div className="w-full py-8">
       <Swiper
@@ -20,18 +25,25 @@ export default function MobileOrbitSlider({ cards }: Props) {
         slidesPerView={1.7}
         centeredSlides
         initialSlide={Math.floor(cards.length / 2)}
-        autoplay
-        className="!overflow-visible"
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={cards.length > 3}
+        className="overflow-visible!"
       >
         {cards.map((card, index) => (
           <SwiperSlide
-            key={index}
+            key={card.publicId || index}
             className="transition-all duration-300 scale-90
                  [&.swiper-slide-active]:scale-125
                  [&.swiper-slide-active]:-translate-y-30
                  [&.swiper-slide-active]:z-150!"
           >
-            <GlassyEventCard {...card} className="" />
+            <GlassyEventCard
+              {...transformEventToCardProps(card)}
+              className=""
+            />
           </SwiperSlide>
         ))}
       </Swiper>

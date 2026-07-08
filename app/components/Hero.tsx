@@ -1,10 +1,30 @@
 import OrbitSlider from "./OrbitSlider";
 import MobileOrbitSlider from "./MobileOrbitSlider";
 import HeroContent from "./HeroContent";
+import { notFound } from "next/navigation";
+import { fetchHeroCarousel } from "../services/events";
+import { Event } from "../types/event";
 
-import { eventCards } from "../data/events";
+export const dynamic = "force-dynamic";
 
-export default function Hero() {
+export default async function Hero() {
+  let eventCards: Event[];
+
+  try {
+    const response = await fetchHeroCarousel();
+    eventCards = response.data || [];
+
+    if (!eventCards || eventCards.length === 0) {
+      notFound();
+    }
+
+    console.log(`Loaded ${eventCards.length} events from API`);
+  } catch (error) {
+    console.error("Failed to fetch hero carousel:", error);
+
+    throw error;
+  }
+
   return (
     <section
       className="relative h-232 overflow-hidden bg-cover bg-center"
@@ -19,7 +39,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile & Tablet */}
-      <div className="md:hidden absolute bottom-45 w-full left-0">
+      <div className="lg:hidden absolute bottom-45 w-full left-0">
         <MobileOrbitSlider cards={eventCards} />
       </div>
 

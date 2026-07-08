@@ -34,7 +34,7 @@ const Featured = () => {
           />
         </div>
 
-        <div className="absolute bottom-0 md:-bottom-40 left-0 gap-8 w-full max-w-234.25 md:h-89.5 flex">
+        <div className="absolute md:bottom-0 left-0 gap-8 w-full max-w-234.25 md:h-89.5 flex">
           {eventCards.map((i, index) => (
             <EventCard
               key={index}
